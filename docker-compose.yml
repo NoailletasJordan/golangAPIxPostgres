@@ -1,0 +1,23 @@
+services:
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:?err} 
+      POSTGRES_USER: ${POSTGRES_USER:?err} 
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?err} 
+    volumes:
+      - ./${DATABASE_FOLDER_NAME:?err}/database-persist:/var/lib/postgresql/data DATABASE_FOLDER_NAME
+      - ./${DATABASE_FOLDER_NAME:?err}/container-database-init:/docker-entrypoint-initdb.d
+    ports:
+      - '5432:5432'
+     
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:?err}
+      PGADMIN_DEFAULT_PASSWORD: ${POSTGRES_PASSWORD:?err}
+    ports:
+      - '5050:80'
+    depends_on:
+      - database
