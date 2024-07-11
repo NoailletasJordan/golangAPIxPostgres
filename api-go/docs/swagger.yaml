@@ -1,0 +1,286 @@
+basePath: /
+definitions:
+  controller.FailureResponse:
+    properties:
+      code:
+        enum:
+        - 400
+        - 404
+        - 500
+        type: integer
+      data:
+        example: "null"
+        type: string
+      error:
+        example: Error Message
+        type: string
+    type: object
+  controller.NewUser:
+    properties:
+      email:
+        type: string
+      firstname:
+        type: string
+      lastname:
+        type: string
+      pass:
+        type: string
+    type: object
+  controller.ResetPasswordBody:
+    properties:
+      pass:
+        type: string
+    type: object
+  controller.SucessResponse:
+    properties:
+      code:
+        enum:
+        - 200
+        type: integer
+      data: {}
+      error:
+        example: "null"
+        type: string
+    type: object
+  controller.UpdateByIdBody:
+    properties:
+      email:
+        type: string
+      firstname:
+        type: string
+      lastname:
+        type: string
+    type: object
+  model.User:
+    properties:
+      active:
+        type: integer
+      created_at:
+        type: string
+      email:
+        type: string
+      firstname:
+        type: string
+      id:
+        type: string
+      lastname:
+        type: string
+      pass:
+        type: string
+      updated_at:
+        type: string
+    type: object
+info:
+  contact: {}
+  title: Showcase
+paths:
+  /users/:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/controller.SucessResponse'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/model.User'
+                  type: array
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+      summary: Get All Users
+      tags:
+      - users
+    post:
+      parameters:
+      - description: body
+        in: body
+        name: PartialUser
+        required: true
+        schema:
+          $ref: '#/definitions/controller.NewUser'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            allOf:
+            - $ref: '#/definitions/controller.SucessResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/model.User'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+      summary: Create One User
+      tags:
+      - users
+  /users/{id}:
+    get:
+      parameters:
+      - description: User UUID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/controller.SucessResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/model.User'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+      summary: Get One User
+      tags:
+      - users
+    patch:
+      parameters:
+      - description: User Id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: PartialUser
+        required: true
+        schema:
+          $ref: '#/definitions/controller.UpdateByIdBody'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            allOf:
+            - $ref: '#/definitions/controller.SucessResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/model.User'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+      summary: Update by Id
+      tags:
+      - users
+  /users/{id}/password:
+    put:
+      parameters:
+      - description: User Id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: PartialUser
+        required: true
+        schema:
+          $ref: '#/definitions/controller.ResetPasswordBody'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            allOf:
+            - $ref: '#/definitions/controller.SucessResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/model.User'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+      summary: Reset Password
+      tags:
+      - users
+  /users/email/{email}:
+    get:
+      parameters:
+      - description: User email
+        in: path
+        name: email
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/controller.SucessResponse'
+            - properties:
+                data:
+                  $ref: '#/definitions/model.User'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/controller.FailureResponse'
+      summary: Get User by ID
+      tags:
+      - users
+swagger: "2.0"
