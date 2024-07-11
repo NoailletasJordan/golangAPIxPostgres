@@ -22,7 +22,7 @@ func (service *Service) GetById(id string) (*model.User, error) {
 }
 
 func (service Service) GetAll() ([]*model.User, error) {
-	query := "select id, email, firstname,lastname , pass, active, created_at, updated_at from users;"
+	query := "select id, email, name, pass, permission_level, created_at, updated_at from users;"
 
 	out, err := service.Model.GetAll(query)
 	return out, err
@@ -82,7 +82,6 @@ func (service Service) CreateOne(fields map[string]any) (*model.User, error) {
 }
 
 func (service Service) GetByEmail(email string) (*model.User, error) {
-	fmt.Println("emeil", email)
 	query := fmt.Sprintf("select * from users where email = '%v';", email)
 	out, err := service.Model.GetOne(query)
 	return out, err

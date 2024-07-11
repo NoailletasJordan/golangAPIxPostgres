@@ -30,7 +30,7 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/controller.SucessResponse"
+                                    "$ref": "#/definitions/routes.SucessResponse"
                                 },
                                 {
                                     "type": "object",
@@ -49,7 +49,7 @@ const docTemplate = `{
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     }
                 }
@@ -69,7 +69,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/controller.NewUser"
+                            "$ref": "#/definitions/routes.NewUser"
                         }
                     }
                 ],
@@ -79,7 +79,7 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/controller.SucessResponse"
+                                    "$ref": "#/definitions/routes.SucessResponse"
                                 },
                                 {
                                     "type": "object",
@@ -95,19 +95,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     }
                 }
@@ -137,7 +137,7 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/controller.SucessResponse"
+                                    "$ref": "#/definitions/routes.SucessResponse"
                                 },
                                 {
                                     "type": "object",
@@ -153,19 +153,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     }
                 }
@@ -195,7 +195,7 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/controller.SucessResponse"
+                                    "$ref": "#/definitions/routes.SucessResponse"
                                 },
                                 {
                                     "type": "object",
@@ -211,19 +211,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     }
                 }
@@ -250,7 +250,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/controller.UpdateByIdBody"
+                            "$ref": "#/definitions/routes.UpdateByIdBody"
                         }
                     }
                 ],
@@ -260,7 +260,7 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/controller.SucessResponse"
+                                    "$ref": "#/definitions/routes.SucessResponse"
                                 },
                                 {
                                     "type": "object",
@@ -276,19 +276,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     }
                 }
@@ -317,7 +317,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/controller.ResetPasswordBody"
+                            "$ref": "#/definitions/routes.ResetPasswordBody"
                         }
                     }
                 ],
@@ -327,7 +327,7 @@ const docTemplate = `{
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/controller.SucessResponse"
+                                    "$ref": "#/definitions/routes.SucessResponse"
                                 },
                                 {
                                     "type": "object",
@@ -343,19 +343,19 @@ const docTemplate = `{
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     }
                 }
@@ -363,7 +363,33 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "controller.FailureResponse": {
+        "model.User": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "pass": {
+                    "type": "string"
+                },
+                "permission_level": {
+                    "type": "integer"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "routes.FailureResponse": {
             "type": "object",
             "properties": {
                 "code": {
@@ -384,16 +410,13 @@ const docTemplate = `{
                 }
             }
         },
-        "controller.NewUser": {
+        "routes.NewUser": {
             "type": "object",
             "properties": {
                 "email": {
                     "type": "string"
                 },
-                "firstname": {
-                    "type": "string"
-                },
-                "lastname": {
+                "name": {
                     "type": "string"
                 },
                 "pass": {
@@ -401,7 +424,7 @@ const docTemplate = `{
                 }
             }
         },
-        "controller.ResetPasswordBody": {
+        "routes.ResetPasswordBody": {
             "type": "object",
             "properties": {
                 "pass": {
@@ -409,7 +432,7 @@ const docTemplate = `{
                 }
             }
         },
-        "controller.SucessResponse": {
+        "routes.SucessResponse": {
             "type": "object",
             "properties": {
                 "code": {
@@ -425,45 +448,13 @@ const docTemplate = `{
                 }
             }
         },
-        "controller.UpdateByIdBody": {
+        "routes.UpdateByIdBody": {
             "type": "object",
             "properties": {
                 "email": {
                     "type": "string"
                 },
-                "firstname": {
-                    "type": "string"
-                },
-                "lastname": {
-                    "type": "string"
-                }
-            }
-        },
-        "model.User": {
-            "type": "object",
-            "properties": {
-                "active": {
-                    "type": "integer"
-                },
-                "created_at": {
-                    "type": "string"
-                },
-                "email": {
-                    "type": "string"
-                },
-                "firstname": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "lastname": {
-                    "type": "string"
-                },
-                "pass": {
-                    "type": "string"
-                },
-                "updated_at": {
+                "name": {
                     "type": "string"
                 }
             }

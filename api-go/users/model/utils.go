@@ -6,8 +6,8 @@ import (
 
 func getUserFromRow(row pgx.Row) (*User, error) {
 	userResult := User{}
-	err := row.Scan(&userResult.Id, &userResult.Email, &userResult.Firstname,
-		&userResult.Lastname, &userResult.Pass, &userResult.Active, &userResult.CreatedAt, &userResult.UpdatedAt)
+	err := row.Scan(&userResult.Id, &userResult.Email, &userResult.Name,
+		&userResult.Pass, &userResult.PermissionLevel, &userResult.CreatedAt, &userResult.UpdatedAt)
 
 	if err != nil {
 		return nil, err
