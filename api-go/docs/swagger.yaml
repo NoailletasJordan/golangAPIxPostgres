@@ -1,6 +1,23 @@
 basePath: /
 definitions:
-  controller.FailureResponse:
+  model.User:
+    properties:
+      created_at:
+        type: string
+      email:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      pass:
+        type: string
+      permission_level:
+        type: integer
+      updated_at:
+        type: string
+    type: object
+  routes.FailureResponse:
     properties:
       code:
         enum:
@@ -15,23 +32,21 @@ definitions:
         example: Error Message
         type: string
     type: object
-  controller.NewUser:
+  routes.NewUser:
     properties:
       email:
         type: string
-      firstname:
-        type: string
-      lastname:
+      name:
         type: string
       pass:
         type: string
     type: object
-  controller.ResetPasswordBody:
+  routes.ResetPasswordBody:
     properties:
       pass:
         type: string
     type: object
-  controller.SucessResponse:
+  routes.SucessResponse:
     properties:
       code:
         enum:
@@ -42,32 +57,11 @@ definitions:
         example: "null"
         type: string
     type: object
-  controller.UpdateByIdBody:
+  routes.UpdateByIdBody:
     properties:
       email:
         type: string
-      firstname:
-        type: string
-      lastname:
-        type: string
-    type: object
-  model.User:
-    properties:
-      active:
-        type: integer
-      created_at:
-        type: string
-      email:
-        type: string
-      firstname:
-        type: string
-      id:
-        type: string
-      lastname:
-        type: string
-      pass:
-        type: string
-      updated_at:
+      name:
         type: string
     type: object
 info:
@@ -83,7 +77,7 @@ paths:
           description: OK
           schema:
             allOf:
-            - $ref: '#/definitions/controller.SucessResponse'
+            - $ref: '#/definitions/routes.SucessResponse'
             - properties:
                 data:
                   items:
@@ -93,7 +87,7 @@ paths:
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
       summary: Get All Users
       tags:
       - users
@@ -104,7 +98,7 @@ paths:
         name: PartialUser
         required: true
         schema:
-          $ref: '#/definitions/controller.NewUser'
+          $ref: '#/definitions/routes.NewUser'
       produces:
       - application/json
       responses:
@@ -112,7 +106,7 @@ paths:
           description: Created
           schema:
             allOf:
-            - $ref: '#/definitions/controller.SucessResponse'
+            - $ref: '#/definitions/routes.SucessResponse'
             - properties:
                 data:
                   $ref: '#/definitions/model.User'
@@ -120,15 +114,15 @@ paths:
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
       summary: Create One User
       tags:
       - users
@@ -147,7 +141,7 @@ paths:
           description: OK
           schema:
             allOf:
-            - $ref: '#/definitions/controller.SucessResponse'
+            - $ref: '#/definitions/routes.SucessResponse'
             - properties:
                 data:
                   $ref: '#/definitions/model.User'
@@ -155,15 +149,15 @@ paths:
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
       summary: Get One User
       tags:
       - users
@@ -179,7 +173,7 @@ paths:
         name: PartialUser
         required: true
         schema:
-          $ref: '#/definitions/controller.UpdateByIdBody'
+          $ref: '#/definitions/routes.UpdateByIdBody'
       produces:
       - application/json
       responses:
@@ -187,7 +181,7 @@ paths:
           description: Created
           schema:
             allOf:
-            - $ref: '#/definitions/controller.SucessResponse'
+            - $ref: '#/definitions/routes.SucessResponse'
             - properties:
                 data:
                   $ref: '#/definitions/model.User'
@@ -195,15 +189,15 @@ paths:
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
       summary: Update by Id
       tags:
       - users
@@ -220,7 +214,7 @@ paths:
         name: PartialUser
         required: true
         schema:
-          $ref: '#/definitions/controller.ResetPasswordBody'
+          $ref: '#/definitions/routes.ResetPasswordBody'
       produces:
       - application/json
       responses:
@@ -228,7 +222,7 @@ paths:
           description: Created
           schema:
             allOf:
-            - $ref: '#/definitions/controller.SucessResponse'
+            - $ref: '#/definitions/routes.SucessResponse'
             - properties:
                 data:
                   $ref: '#/definitions/model.User'
@@ -236,15 +230,15 @@ paths:
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
       summary: Reset Password
       tags:
       - users
@@ -263,7 +257,7 @@ paths:
           description: OK
           schema:
             allOf:
-            - $ref: '#/definitions/controller.SucessResponse'
+            - $ref: '#/definitions/routes.SucessResponse'
             - properties:
                 data:
                   $ref: '#/definitions/model.User'
@@ -271,15 +265,15 @@ paths:
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/controller.FailureResponse'
+            $ref: '#/definitions/routes.FailureResponse'
       summary: Get User by ID
       tags:
       - users

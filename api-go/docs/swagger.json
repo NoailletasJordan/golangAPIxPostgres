@@ -21,7 +21,7 @@
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/controller.SucessResponse"
+                                    "$ref": "#/definitions/routes.SucessResponse"
                                 },
                                 {
                                     "type": "object",
@@ -40,7 +40,7 @@
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     }
                 }
@@ -60,7 +60,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/controller.NewUser"
+                            "$ref": "#/definitions/routes.NewUser"
                         }
                     }
                 ],
@@ -70,7 +70,7 @@
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/controller.SucessResponse"
+                                    "$ref": "#/definitions/routes.SucessResponse"
                                 },
                                 {
                                     "type": "object",
@@ -86,19 +86,19 @@
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     }
                 }
@@ -128,7 +128,7 @@
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/controller.SucessResponse"
+                                    "$ref": "#/definitions/routes.SucessResponse"
                                 },
                                 {
                                     "type": "object",
@@ -144,19 +144,19 @@
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     }
                 }
@@ -186,7 +186,7 @@
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/controller.SucessResponse"
+                                    "$ref": "#/definitions/routes.SucessResponse"
                                 },
                                 {
                                     "type": "object",
@@ -202,19 +202,19 @@
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     }
                 }
@@ -241,7 +241,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/controller.UpdateByIdBody"
+                            "$ref": "#/definitions/routes.UpdateByIdBody"
                         }
                     }
                 ],
@@ -251,7 +251,7 @@
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/controller.SucessResponse"
+                                    "$ref": "#/definitions/routes.SucessResponse"
                                 },
                                 {
                                     "type": "object",
@@ -267,19 +267,19 @@
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     }
                 }
@@ -308,7 +308,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/controller.ResetPasswordBody"
+                            "$ref": "#/definitions/routes.ResetPasswordBody"
                         }
                     }
                 ],
@@ -318,7 +318,7 @@
                         "schema": {
                             "allOf": [
                                 {
-                                    "$ref": "#/definitions/controller.SucessResponse"
+                                    "$ref": "#/definitions/routes.SucessResponse"
                                 },
                                 {
                                     "type": "object",
@@ -334,19 +334,19 @@
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/controller.FailureResponse"
+                            "$ref": "#/definitions/routes.FailureResponse"
                         }
                     }
                 }
@@ -354,7 +354,33 @@
         }
     },
     "definitions": {
-        "controller.FailureResponse": {
+        "model.User": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "pass": {
+                    "type": "string"
+                },
+                "permission_level": {
+                    "type": "integer"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "routes.FailureResponse": {
             "type": "object",
             "properties": {
                 "code": {
@@ -375,16 +401,13 @@
                 }
             }
         },
-        "controller.NewUser": {
+        "routes.NewUser": {
             "type": "object",
             "properties": {
                 "email": {
                     "type": "string"
                 },
-                "firstname": {
-                    "type": "string"
-                },
-                "lastname": {
+                "name": {
                     "type": "string"
                 },
                 "pass": {
@@ -392,7 +415,7 @@
                 }
             }
         },
-        "controller.ResetPasswordBody": {
+        "routes.ResetPasswordBody": {
             "type": "object",
             "properties": {
                 "pass": {
@@ -400,7 +423,7 @@
                 }
             }
         },
-        "controller.SucessResponse": {
+        "routes.SucessResponse": {
             "type": "object",
             "properties": {
                 "code": {
@@ -416,45 +439,13 @@
                 }
             }
         },
-        "controller.UpdateByIdBody": {
+        "routes.UpdateByIdBody": {
             "type": "object",
             "properties": {
                 "email": {
                     "type": "string"
                 },
-                "firstname": {
-                    "type": "string"
-                },
-                "lastname": {
-                    "type": "string"
-                }
-            }
-        },
-        "model.User": {
-            "type": "object",
-            "properties": {
-                "active": {
-                    "type": "integer"
-                },
-                "created_at": {
-                    "type": "string"
-                },
-                "email": {
-                    "type": "string"
-                },
-                "firstname": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "lastname": {
-                    "type": "string"
-                },
-                "pass": {
-                    "type": "string"
-                },
-                "updated_at": {
+                "name": {
                     "type": "string"
                 }
             }

@@ -6,9 +6,6 @@ import (
 	"net/http"
 )
 
-// @title Showcase
-// @BasePath /
-
 type SucessResponse struct {
 	Data  any    `json:"data"`
 	Error string `json:"error" example:"null"`
@@ -33,6 +30,9 @@ func InitializeRoute(mux *http.ServeMux, controller c.Controller) {
 type ResetPasswordBody = struct {
 	Pass string `json:"pass"`
 }
+
+// @title Showcase
+// @BasePath /
 
 // @Summary		Reset Password
 // @Tags			users
@@ -61,10 +61,10 @@ func GetByEmail(mux *http.ServeMux, controller c.Controller) {
 	mux.HandleFunc("GET /users/email/{email}", controller.HandleResponse(controller.GetByEmail))
 }
 
+// temp
 type UpdateByIdBody = struct {
-	Email     string `json:"email"`
-	Firstname string `json:"firstname"`
-	Lastname  string `json:"lastname"`
+	Email string `json:"email"`
+	Name  string `json:"name"`
 }
 
 // @Summary		Update by Id
@@ -105,10 +105,9 @@ func GetById(mux *http.ServeMux, controller c.Controller) {
 }
 
 type NewUser = struct {
-	Email     string `json:"email"`
-	Firstname string `json:"firstname"`
-	Lastname  string `json:"lastname"`
-	Pass      string `json:"pass"`
+	Email string `json:"email"`
+	Name  string `json:"name"`
+	Pass  string `json:"pass"`
 }
 
 // @Summary		Create One User

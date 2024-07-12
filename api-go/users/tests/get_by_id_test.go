@@ -19,8 +19,8 @@ func TestGetById(t *testing.T) {
 	})
 
 	// ADD a user
-	query := fmt.Sprintf(`INSERT INTO "public"."users" ( "id", "email", "firstname", "lastname", "pass") 
-	VALUES ('%v', 'dummy@test.com', 'travis', 'scott', 'some123pass' );`, validId)
+	query := fmt.Sprintf(`INSERT INTO "public"."users" ( "id", "email", "name", "pass") 
+	VALUES ('%v', 'dummy@test.com', 'travis', 'some123pass' );`, validId)
 	_, err := dbConnexion.Exec(context.Background(), query)
 
 	if err != nil {

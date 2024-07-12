@@ -8,14 +8,13 @@ import (
 )
 
 type User struct {
-	Id        string    `json:"id"`
-	Email     string    `json:"email"`
-	Firstname string    `json:"firstname"`
-	Lastname  string    `json:"lastname"`
-	Pass      string    `json:"pass"`
-	Active    int       `json:"active"`
-	CreatedAt time.Time `json:"created_at"`
-	UpdatedAt time.Time `json:"updated_at"`
+	Id              string    `json:"id"`
+	Email           string    `json:"email"`
+	Name            string    `json:"name"`
+	Pass            string    `json:"pass"`
+	PermissionLevel int       `json:"permission_level"`
+	CreatedAt       time.Time `json:"created_at"`
+	UpdatedAt       time.Time `json:"updated_at"`
 }
 
 type Model struct {

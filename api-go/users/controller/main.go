@@ -38,9 +38,8 @@ func (controller *Controller) UpdateById(w http.ResponseWriter, r *http.Request)
 		return Response{Error: err, Code: http.StatusBadRequest}
 	}
 	var ruleMap = rules{
-		"email":     `omitnil,required,type-string,email`,
-		"firstname": `omitnil,required,type-string,max=40`,
-		"lastname":  `omitnil,required,type-string,max=40`,
+		"email": `omitnil,required,type-string,email`,
+		"name":  `omitnil,required,type-string,max=40`,
 	}
 
 	validate := getValidator()
@@ -61,10 +60,9 @@ func (controller *Controller) CreateOne(w http.ResponseWriter, r *http.Request) 
 	}
 
 	var ruleMap = rules{
-		"email":     `required,type-string,email`,
-		"firstname": `required,type-string,max=40`,
-		"lastname":  `required,type-string,max=40`,
-		"pass":      `required,type-string,min=6,max=40`,
+		"email": `required,type-string,email`,
+		"name":  `required,type-string,max=40`,
+		"pass":  `required,type-string,min=6,max=40`,
 	}
 	validate := getValidator()
 	err = validateMapCustom(validate, body, ruleMap)
