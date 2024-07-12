@@ -30,11 +30,6 @@ func (controller *Controller) GetAll(w http.ResponseWriter, r *http.Request) Res
 	return Response{Data: out, Error: err}
 }
 
-type UpdateByIdBody = struct {
-	Email string `json:"email"`
-	Name  string `json:"name"`
-}
-
 func (controller *Controller) UpdateById(w http.ResponseWriter, r *http.Request) Response {
 	w.Header().Set("Content-Type", "application/json")
 	idString := r.PathValue("id")
