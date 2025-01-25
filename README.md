@@ -1,6 +1,6 @@
 # Golang API x Postgres
 
-This library helps kickstart projects by presenting an easily editable API with a [3-layered architecture](https://blog.jordannoailletas.com/en/published/three-layered-architecture), connected to a PostgreSQL database on Docker.
+This repo helps kickstart projects by presenting an easily editable API with a [3-layered architecture](https://blog.jordannoailletas.com/en/published/three-layered-architecture), connected to a PostgreSQL database on Docker.
 
 ![showcase](https://github.com/user-attachments/assets/04564f61-9d8b-421d-9668-af3bdf9c18fc)
 
